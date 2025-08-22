@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "SF Conqueror Automation",
+    "version": "1.0",
+    "description": "Automate Salesforce lead creation",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://*.salesforce.com/*",
+        "https://*.github.io/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.salesforce.com/*", "https://*.github.io/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
